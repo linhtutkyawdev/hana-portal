@@ -1,6 +1,7 @@
 import type { AppProps } from 'next/app'
 import { ThemeProvider } from 'next-themes'
 import '@/styles/globals.css'
+import Page from '@/components/page'
 
 export default function App({ Component, pageProps }: AppProps) {
 	return (
@@ -9,7 +10,9 @@ export default function App({ Component, pageProps }: AppProps) {
 			defaultTheme='system'
 			disableTransitionOnChange
 		>
-			<Component {...pageProps} />
+			<Page>
+				<Component {...pageProps} />
+			</Page>
 		</ThemeProvider>
 	)
 }
